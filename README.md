@@ -57,7 +57,7 @@ The board was designed entirely in **Altium Designer** without access to industr
 Key stackup decisions:
 - Four dedicated GND layers (L2, L5, L7, L9) ensure every signal layer has a solid adjacent ground reference - **improved SI/EMI**
 - L3 is a segmented power plane — adjacent to L2 GND minimizing power delivery inductance → PDN carefully considered to reliably supply power hungry devices during switching transients
-- Copper balance on all layers minimises board bow and twist
+- Copper balance on all layers minimizes board bow and twist
 - High speed signal groups routed on inner signal layers buried between ground planes to **minimize crosstalk and EMI**
 
 ### Signal & Power Integrity
@@ -65,7 +65,7 @@ Key stackup decisions:
 Without access to simulation tools, every SI decision was grounded in rule-based practice or derived directly from datasheets (AMD UG933, DS187, and JEDEC DDR3L specifications):
 
 - **Impedance control** — all differential pairs and single-ended high-speed nets impedance controlled
-- **DDR3L timing** — address/command & control and data byte lanes delay matched within ±10 ps using length tuning in Altium accounting for pin-package delays also; fly-by topology with a single VTT rail (BD3539FVM) and explicit 49.9Ω termination resistors on each group per NXP application note 
+- **DDR3L timing** — address/command & control and data byte lanes delay matched within ±10 ps using length tuning in Altium accounting for pin-package delays also; fly-by topology with a single VTT rail (BD3539FVM) and explicit 49.9Ω termination resistors on each group per AMD/NXP application notes
 <table>
   <tr>
     <td align="center"><img src="hardware/layout/DDR3_ACC_flyby_L1.png" width="380"/><br/><sub>ACC signals — L1</sub></td>
